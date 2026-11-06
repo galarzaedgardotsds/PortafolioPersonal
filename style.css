@@ -285,12 +285,34 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.08;
+    font-size: clamp(2rem, 4.4vw, 3.8rem);
+    line-height: 1.15;
     font-weight: 700;
     letter-spacing: -1.5px;
     margin-bottom: 1.5rem;
-    max-width: 850px;
+    max-width: 950px;
+}
+
+.hero-title-line-2 {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: var(--accent-cyan);
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 2px;
+    vertical-align: middle;
+    animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
 }
 
 .gradient-text {
@@ -818,8 +840,33 @@ button:focus-visible {
         grid-template-columns: 1fr;
         gap: 0;
     }
-    .btn-whatsapp {
-        margin: 0.75rem 0 0;
+    .contact-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .contact-buttons .btn {
+        justify-content: center;
+        width: 100%;
+    }
+    .hero-title {
+        font-size: clamp(1.85rem, 6.5vw, 2.3rem);
+        min-height: 4em;
+    }
+    .hero-title-line-2 {
+        display: inline;
+        white-space: normal;
+    }
+    .whatsapp-fab {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 50px;
+        height: 50px;
+    }
+    .back-to-top {
+        bottom: 1.25rem;
+        left: 1.25rem;
+        width: 44px;
+        height: 44px;
     }
 }
 
@@ -878,25 +925,6 @@ button:focus-visible {
     background: rgba(26, 29, 42, 0.95);
     transform: translateY(-4px);
     box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.25);
-}
-
-/* ==========================================================================
-   TYPEWRITER CURSOR
-   ========================================================================== */
-.typewriter-cursor {
-    display: inline-block;
-    width: 3px;
-    height: 0.85em;
-    background: var(--accent-cyan);
-    margin-left: 3px;
-    border-radius: 2px;
-    vertical-align: middle;
-    animation: cursorBlink 1s step-end infinite;
-}
-
-@keyframes cursorBlink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
 }
 
 /* ==========================================================================

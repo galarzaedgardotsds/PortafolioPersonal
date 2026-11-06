@@ -46,7 +46,10 @@
     <main class="container">
         <section class="hero" id="about">
             <div class="status-badge"><span class="pulse-dot"></span>Available for new projects</div>
-            <h1 class="hero-title">Building software that is <span class="gradient-text" id="typewriter-text">fast, clean</span><span class="typewriter-cursor" aria-hidden="true"></span> and purposeful.</h1>
+            <h1 class="hero-title">
+                Building software that is <br class="hero-title-break">
+                <span class="hero-title-line-2"><span class="gradient-text" id="typewriter-text">fast, clean</span><span class="typewriter-cursor" aria-hidden="true"></span> and purposeful.</span>
+            </h1>
             <p class="hero-subtitle">Hi, I'm <strong>Edgar Galarza</strong>, a Software Development student from Argentina. I enjoy both low-level logic in C and computer architecture, as well as creating modern and interactive web experiences.</p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View projects <i class='bx bx-right-arrow-alt'></i></a>
@@ -234,10 +237,19 @@
             backToTop.classList.toggle('visible', window.scrollY > 350);
         }, { passive: true });
 
-        // --- Typewriter Effect ---
+        // --- Typewriter Effect without layout shift ---
+        const heroTitle = document.querySelector('.hero-title');
         const typewriterEl = document.getElementById('typewriter-text');
         const phrases = ['fast, clean', 'modern, accessible', 'efficient, robust'];
-        let phraseIndex = 0, charIndex = 0, isDeleting = false;
+        let phraseIndex = 0, charIndex = phrases[0].length, isDeleting = true;
+
+        function fixHeroHeight() {
+            if (!heroTitle) return;
+            heroTitle.style.minHeight = 'auto';
+            heroTitle.style.minHeight = `${heroTitle.offsetHeight}px`;
+        }
+        fixHeroHeight();
+        window.addEventListener('resize', fixHeroHeight, { passive: true });
 
         function typeWriter() {
             const current = phrases[phraseIndex];
@@ -246,17 +258,17 @@
                 : current.substring(0, charIndex + 1);
             isDeleting ? charIndex-- : charIndex++;
 
-            let delay = isDeleting ? 45 : 80;
+            let delay = isDeleting ? 40 : 80;
             if (!isDeleting && charIndex === current.length) {
-                delay = 2200; isDeleting = true;
+                delay = 2400; isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                delay = 400;
+                delay = 350;
             }
             setTimeout(typeWriter, delay);
         }
-        setTimeout(typeWriter, 1200);
+        setTimeout(typeWriter, 2200);
     </script>
 </body>
 </html>
