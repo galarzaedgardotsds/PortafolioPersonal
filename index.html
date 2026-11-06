@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgar Galarza | Software Developer</title>
+    <!-- Fuentes modernas: Space Grotesk para títulos y Plus Jakarta Sans para lectura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Iconos de Lucide/Remix (vía CDN de Boxicons para ligereza) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Luces de fondo ambientales con movimiento -->
+    <div class="ambient-light light-1"></div>
+    <div class="ambient-light light-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navegación flotante Glassmorphism -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="#" class="logo">edgar<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- HERO SECTION -->
+        <section class="hero" id="sobre-mi">
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                Disponible para nuevos proyectos
+            </div>
+            
+            <h1 class="hero-title">
+                Construyendo software <span class="gradient-text">rápido, limpio</span> y con propósito.
+            </h1>
+            
+            <p class="hero-subtitle">
+                Hola, soy <strong>Edgar Galarza</strong>. Estudiante de Desarrollo de Software en Argentina. Me apasiona tanto la lógica de bajo nivel en C y la arquitectura de computadoras como crear experiencias web modernas e interactivas.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#proyectos" class="btn btn-primary">
+                    Ver proyectos <i class='bx bx-right-arrow-alt'></i>
+                </a>
+                <a href="https://github.com/galarzaedgardotsds" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class='bx bxl-github'></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/edgardo-galarza-127718449/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class='bx bxl-linkedin'></i> LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- BENTO GRID: SOBRE MÍ Y STACK (Estilo Codernauta) -->
+        <section class="bento-section" id="stack">
+            <h2 class="section-title"><i class='bx bx-terminal'></i> Mi Ecosistema</h2>
+            
+            <div class="bento-grid">
+                <!-- Caja 1: Perfil técnico -->
+                <div class="bento-card span-2 spotlight">
+                    <div class="card-content">
+                        <span class="card-tag">Enfoque</span>
+                        <h3>Del bajo nivel al Frontend</h3>
+                        <p>Entender cómo funciona el hardware, los procesadores y la memoria en C me permite escribir código web mucho más optimizado y estructurado.</p>
+                    </div>
+                    <div class="card-bg-icon"><i class='bx bx-microchip'></i></div>
+                </div>
+
+                <!-- Caja 2: Ubicación -->
+                <div class="bento-card spotlight">
+                    <div class="card-content">
+                        <span class="card-tag">Ubicación</span>
+                        <h3>Argentina 🇦🇷</h3>
+                        <p>Desarrollando desde Corrientes para el mundo.</p>
+                    </div>
+                    <div class="card-bg-icon"><i class='bx bx-world'></i></div>
+                </div>
+
+                <!-- Caja 3: Tech Stack con Cinta Infinita (Marquee) -->
+                <div class="bento-card span-3 spotlight marquee-card">
+                    <div class="card-content">
+                        <span class="card-tag">Herramientas & Tecnologías</span>
+                        <h3>Mi Stack Diario</h3>
+                    </div>
+                    <div class="marquee-wrapper">
+                        <div class="marquee-track">
+                            <span class="tech-pill"><i class='bx bxl-html5'></i> HTML5</span>
+                            <span class="tech-pill"><i class='bx bxl-css3'></i> CSS3</span>
+                            <span class="tech-pill"><i class='bx bxl-javascript'></i> JavaScript</span>
+                            <span class="tech-pill"><i class='bx bx-code-curly'></i> Lenguaje C</span>
+                            <span class="tech-pill"><i class='bx bxl-git'></i> Git & GitHub</span>
+                            <span class="tech-pill"><i class='bx bxl-visual-studio'></i> VS Code</span>
+                            <span class="tech-pill"><i class='bx bx-server'></i> Arquitectura PC</span>
+                            <!-- Duplicado para efecto infinito fluido -->
+                            <span class="tech-pill"><i class='bx bxl-html5'></i> HTML5</span>
+                            <span class="tech-pill"><i class='bx bxl-css3'></i> CSS3</span>
+                            <span class="tech-pill"><i class='bx bxl-javascript'></i> JavaScript</span>
+                            <span class="tech-pill"><i class='bx bx-code-curly'></i> Lenguaje C</span>
+                            <span class="tech-pill"><i class='bx bxl-git'></i> Git & GitHub</span>
+                            <span class="tech-pill"><i class='bx bxl-visual-studio'></i> VS Code</span>
+                            <span class="tech-pill"><i class='bx bx-server'></i> Arquitectura PC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PROYECTOS -->
+        <section class="projects-section" id="proyectos">
+            <h2 class="section-title"><i class='bx bx-code-alt'></i> Proyectos Destacados</h2>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <article class="project-card spotlight">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">PWA / Web App</span>
+                            <div class="project-links">
+                                <a href="https://github.com/galarzaedgardotsds" target="_blank" rel="noopener noreferrer" title="Ver perfil de GitHub"><i class='bx bxl-github'></i></a>
+                                <a href="https://galarzaedgardotsds.github.io/AppGastos/" target="_blank" rel="noopener noreferrer" title="Ver demo"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Tracker de Gastos Personales</h3>
+                        <p class="project-desc">
+                            Aplicación Web Progresiva (PWA) instalable para el control de finanzas diarias, con almacenamiento local, interfaz dark mode fluida y métricas claras.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>PWA</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 -->
+                <article class="project-card spotlight">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-type">Web Grupal / Agencia</span>
+                            <div class="project-links">
+                                <a href="https://github.com/galarzaedgardotsds" target="_blank" rel="noopener noreferrer" title="Ver perfil de GitHub"><i class='bx bxl-github'></i></a>
+                                <a href="https://galarzaedgardotsds.github.io/TridenteTech/" target="_blank" rel="noopener noreferrer" title="Ver demo"><i class='bx bx-link-external'></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">TridenteTech</h3>
+                        <p class="project-desc">
+                            Plataforma web de desarrollo de software colaborativo desplegada en producción, enfocada en rendimiento, diseño responsivo y presentación de servicios técnicos.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JS</span>
+                            <span>Git</span>
+                            <span>GitHub Pages</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FOOTER / CONTACTO -->
+        <footer class="footer" id="contacto">
+            <div class="footer-box spotlight">
+                <h2>¿Charlamos sobre código o proyectos?</h2>
+                <p>Siempre estoy abierto a colaborar en desarrollos web, proyectos académicos o nuevas oportunidades.</p>
+                <form class="contact-form" action="https://formspree.io/f/xljgnrnn" method="POST">
+                    <div class="contact-form-row">
+                        <div class="contact-field">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="contact-field">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="contact-field">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="¿En qué puedo ayudarte?" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class='bx bx-send'></i> Enviar mensaje
+                    </button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Edgar Galarza. Creado desde cero con mucho café y código limpio.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Script ligero para el efecto Spotlight que sigue al mouse en las tarjetas -->
+    <script>
+        document.querySelectorAll('.spotlight').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
