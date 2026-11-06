@@ -162,6 +162,12 @@ body {
     cursor: pointer;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
 .language-switch {
     color: var(--accent-cyan);
     text-decoration: none;
@@ -717,7 +723,7 @@ button:focus-visible {
         display: inline-flex;
     }
     .language-switch {
-        margin-left: auto;
+        margin-left: 0;
     }
     .contact-form-row {
         grid-template-columns: 1fr;
