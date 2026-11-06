@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <div class="ambient-light light-1"></div>
     <div class="ambient-light light-2"></div>
     <div class="grid-overlay"></div>
@@ -43,7 +46,7 @@
     <main class="container">
         <section class="hero" id="about">
             <div class="status-badge"><span class="pulse-dot"></span>Available for new projects</div>
-            <h1 class="hero-title">Building software that is <span class="gradient-text">fast, clean</span> and purposeful.</h1>
+            <h1 class="hero-title">Building software that is <span class="gradient-text" id="typewriter-text">fast, clean</span><span class="typewriter-cursor" aria-hidden="true"></span> and purposeful.</h1>
             <p class="hero-subtitle">Hi, I'm <strong>Edgar Galarza</strong>, a Software Development student from Argentina. I enjoy both low-level logic in C and computer architecture, as well as creating modern and interactive web experiences.</p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View projects <i class='bx bx-right-arrow-alt'></i></a>
@@ -53,18 +56,18 @@
             </div>
         </section>
 
-        <section class="bento-section" id="stack">
+        <section class="bento-section reveal" id="stack">
             <h2 class="section-title"><i class='bx bx-terminal'></i> My Ecosystem</h2>
             <div class="bento-grid">
-                <div class="bento-card span-2 spotlight">
+                <div class="bento-card span-2 spotlight reveal reveal-delay-1">
                     <div class="card-content"><span class="card-tag">Focus</span><h3>From low-level to frontend</h3><p>Understanding hardware, processors and memory in C helps me write more optimized and structured web code.</p></div>
                     <div class="card-bg-icon"><i class='bx bx-microchip'></i></div>
                 </div>
-                <div class="bento-card spotlight">
+                <div class="bento-card spotlight reveal reveal-delay-2">
                     <div class="card-content"><span class="card-tag">Location</span><h3>Argentina 🇦🇷</h3><p>Building from Corrientes for the world.</p></div>
                     <div class="card-bg-icon"><i class='bx bx-world'></i></div>
                 </div>
-                <div class="bento-card span-3 spotlight marquee-card">
+                <div class="bento-card span-3 spotlight marquee-card reveal reveal-delay-3">
                     <div class="card-content"><span class="card-tag">Tools & Technologies</span><h3>My Daily Stack</h3></div>
                     <div class="marquee-wrapper"><div class="marquee-track">
                         <span class="tech-pill"><i class='bx bxl-html5'></i> HTML5</span><span class="tech-pill"><i class='bx bxl-css3'></i> CSS3</span><span class="tech-pill"><i class='bx bxl-javascript'></i> JavaScript</span><span class="tech-pill"><i class='bx bx-code-curly'></i> C Language</span><span class="tech-pill"><i class='bx bxl-git'></i> Git & GitHub</span><span class="tech-pill"><i class='bx bxl-visual-studio'></i> VS Code</span><span class="tech-pill"><i class='bx bx-server'></i> PC Architecture</span>
@@ -74,10 +77,10 @@
             </div>
         </section>
 
-        <section class="projects-section" id="projects">
+        <section class="projects-section reveal" id="projects">
             <h2 class="section-title"><i class='bx bx-code-alt'></i> Featured Projects</h2>
             <div class="projects-grid">
-                <article class="project-card spotlight">
+                <article class="project-card spotlight reveal reveal-delay-1">
                     <a class="project-preview" href="https://galarzaedgardotsds.github.io/AppGastos/" target="_blank" rel="noopener noreferrer" aria-label="Open Personal Expense Tracker demo"><img src="assets/app-gastos-preview.png" alt="Personal Expense Tracker app preview" loading="lazy"></a>
                     <div class="project-content">
                         <div class="project-header"><span class="project-type">PWA / Web App</span><div class="project-links"><a href="https://github.com/galarzaedgardotsds/AppGastos" target="_blank" rel="noopener noreferrer" title="View AppGastos code" aria-label="View AppGastos code"><i class='bx bxl-github'></i></a><a href="https://galarzaedgardotsds.github.io/AppGastos/" target="_blank" rel="noopener noreferrer" title="View demo" aria-label="View AppGastos demo"><i class='bx bx-link-external'></i></a></div></div>
@@ -86,7 +89,7 @@
                         <div class="project-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PWA</span></div>
                     </div>
                 </article>
-                <article class="project-card spotlight">
+                <article class="project-card spotlight reveal reveal-delay-2">
                     <a class="project-preview" href="https://galarzaedgardotsds.github.io/TridenteTech/" target="_blank" rel="noopener noreferrer" aria-label="Open TridenteTech demo"><img src="assets/tridentetech-preview.png" alt="TridenteTech website preview" loading="lazy"></a>
                     <div class="project-content">
                         <div class="project-header"><span class="project-type">Team Website / Agency</span><div class="project-links"><a href="https://github.com/galarzaedgardotsds/TridenteTech" target="_blank" rel="noopener noreferrer" title="View TridenteTech code" aria-label="View TridenteTech code"><i class='bx bxl-github'></i></a><a href="https://galarzaedgardotsds.github.io/TridenteTech/" target="_blank" rel="noopener noreferrer" title="View demo" aria-label="View TridenteTech demo"><i class='bx bx-link-external'></i></a></div></div>
@@ -98,7 +101,7 @@
             </div>
         </section>
 
-        <footer class="footer" id="contact">
+        <footer class="footer reveal" id="contact">
             <div class="footer-box spotlight">
                 <h2>Shall we talk about code or projects?</h2>
                 <p>I'm always open to collaborating on web development, academic projects and new opportunities.</p>
@@ -107,13 +110,31 @@
                     <div class="contact-form-row"><div class="contact-field"><label for="name">Full name</label><input type="text" id="name" name="name" placeholder="Your name" required></div><div class="contact-field"><label for="email">Email address</label><input type="email" id="email" name="email" placeholder="you@email.com" required></div></div>
                     <div class="contact-field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="How can I help you?" required></div>
                     <div class="contact-field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea></div>
-                    <button type="submit" class="btn btn-primary"><i class='bx bx-send'></i> Send message</button>
+                    <div class="contact-buttons">
+                        <button type="submit" class="btn btn-primary"><i class='bx bx-send'></i> Send message</button>
+                        <a href="https://wa.me/5493794547731?text=Hello%20Edgar%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class='bx bxl-whatsapp'></i> Message me on WhatsApp</a>
+                    </div>
                     <p class="form-status" aria-live="polite"></p>
                 </form>
             </div>
             <div class="footer-bottom"><p>© 2026 Edgar Galarza. Built from scratch with plenty of coffee and clean code.</p></div>
         </footer>
     </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5493794547731?text=Hello%20Edgar%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch."
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-fab"
+       aria-label="Message me on WhatsApp">
+        <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+        <span class="whatsapp-fab-label">Let's talk!</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#about" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class='bx bx-chevron-up' aria-hidden="true"></i>
+    </a>
+
     <script>
         document.querySelectorAll('.spotlight').forEach(card => {
             card.addEventListener('mousemove', event => {
@@ -138,6 +159,18 @@
             menuToggle.innerHTML = "<span aria-hidden='true'>☰</span>";
         }));
 
+        // --- Scroll Reveal with Intersection Observer ---
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
         const contactForm = document.querySelector('.contact-form');
         const formStatus = contactForm.querySelector('.form-status');
         contactForm.addEventListener('submit', async event => {
@@ -156,6 +189,74 @@
                 submitButton.disabled = false;
             }
         });
+
+        // --- Scroll Progress Bar ---
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = `${(scrolled / total) * 100}%`;
+        }, { passive: true });
+
+        // --- Navbar auto-hide & Active Nav Link ---
+        const navbarContainer = document.querySelector('.navbar-container');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 120 && currentScrollY > lastScrollY && !navLinks.classList.contains('is-open')) {
+                navbarContainer.classList.add('nav-hidden');
+            } else {
+                navbarContainer.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navAnchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navAnchorLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // --- Back to Top Button ---
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 350);
+        }, { passive: true });
+
+        // --- Typewriter Effect ---
+        const typewriterEl = document.getElementById('typewriter-text');
+        const phrases = ['fast, clean', 'modern, accessible', 'efficient, robust'];
+        let phraseIndex = 0, charIndex = 0, isDeleting = false;
+
+        function typeWriter() {
+            const current = phrases[phraseIndex];
+            typewriterEl.textContent = isDeleting
+                ? current.substring(0, charIndex - 1)
+                : current.substring(0, charIndex + 1);
+            isDeleting ? charIndex-- : charIndex++;
+
+            let delay = isDeleting ? 45 : 80;
+            if (!isDeleting && charIndex === current.length) {
+                delay = 2200; isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                delay = 400;
+            }
+            setTimeout(typeWriter, delay);
+        }
+        setTimeout(typeWriter, 1200);
     </script>
 </body>
 </html>

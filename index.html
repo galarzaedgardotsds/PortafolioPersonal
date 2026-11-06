@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Barra de progreso de scroll -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Luces de fondo ambientales con movimiento -->
     <div class="ambient-light light-1"></div>
     <div class="ambient-light light-2"></div>
@@ -53,7 +56,7 @@
             </div>
             
             <h1 class="hero-title">
-                Construyendo software <span class="gradient-text">rápido, limpio</span> y con propósito.
+                Construyendo software <span class="gradient-text" id="typewriter-text">rápido, limpio</span><span class="typewriter-cursor" aria-hidden="true"></span> y con propósito.
             </h1>
             
             <p class="hero-subtitle">
@@ -77,12 +80,12 @@
         </section>
 
         <!-- BENTO GRID: SOBRE MÍ Y STACK (Estilo Codernauta) -->
-        <section class="bento-section" id="stack">
+        <section class="bento-section reveal" id="stack">
             <h2 class="section-title"><i class='bx bx-terminal'></i> Mi Ecosistema</h2>
             
             <div class="bento-grid">
                 <!-- Caja 1: Perfil técnico -->
-                <div class="bento-card span-2 spotlight">
+                <div class="bento-card span-2 spotlight reveal reveal-delay-1">
                     <div class="card-content">
                         <span class="card-tag">Enfoque</span>
                         <h3>Del bajo nivel al Frontend</h3>
@@ -92,7 +95,7 @@
                 </div>
 
                 <!-- Caja 2: Ubicación -->
-                <div class="bento-card spotlight">
+                <div class="bento-card spotlight reveal reveal-delay-2">
                     <div class="card-content">
                         <span class="card-tag">Ubicación</span>
                         <h3>Argentina 🇦🇷</h3>
@@ -102,7 +105,7 @@
                 </div>
 
                 <!-- Caja 3: Tech Stack con Cinta Infinita (Marquee) -->
-                <div class="bento-card span-3 spotlight marquee-card">
+                <div class="bento-card span-3 spotlight marquee-card reveal reveal-delay-3">
                     <div class="card-content">
                         <span class="card-tag">Herramientas & Tecnologías</span>
                         <h3>Mi Stack Diario</h3>
@@ -131,12 +134,12 @@
         </section>
 
         <!-- SECCIÓN DE PROYECTOS -->
-        <section class="projects-section" id="proyectos">
+        <section class="projects-section reveal" id="proyectos">
             <h2 class="section-title"><i class='bx bx-code-alt'></i> Proyectos Destacados</h2>
 
             <div class="projects-grid">
                 <!-- Proyecto 1 -->
-                <article class="project-card spotlight">
+                <article class="project-card spotlight reveal reveal-delay-1">
                     <a class="project-preview" href="https://galarzaedgardotsds.github.io/AppGastos/" target="_blank" rel="noopener noreferrer" aria-label="Abrir demo de Tracker de Gastos Personales">
                         <img src="assets/app-gastos-preview.png" alt="Vista previa de la aplicación Tracker de Gastos Personales" loading="lazy">
                     </a>
@@ -162,7 +165,7 @@
                 </article>
 
                 <!-- Proyecto 2 -->
-                <article class="project-card spotlight">
+                <article class="project-card spotlight reveal reveal-delay-2">
                     <a class="project-preview" href="https://galarzaedgardotsds.github.io/TridenteTech/" target="_blank" rel="noopener noreferrer" aria-label="Abrir demo de TridenteTech">
                         <img src="assets/tridentetech-preview.png" alt="Vista previa del sitio web de TridenteTech" loading="lazy">
                     </a>
@@ -190,7 +193,7 @@
         </section>
 
         <!-- FOOTER / CONTACTO -->
-        <footer class="footer" id="contacto">
+        <footer class="footer reveal" id="contacto">
             <div class="footer-box spotlight">
                 <h2>¿Charlamos sobre código o proyectos?</h2>
                 <p>Siempre estoy abierto a colaborar en desarrollos web, proyectos académicos o nuevas oportunidades.</p>
@@ -214,9 +217,14 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class='bx bx-send'></i> Enviar mensaje
-                    </button>
+                    <div class="contact-buttons">
+                        <button type="submit" class="btn btn-primary">
+                            <i class='bx bx-send'></i> Enviar mensaje
+                        </button>
+                        <a href="https://wa.me/5493794547731?text=Hola%20Edgar%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class='bx bxl-whatsapp'></i> Escribirme por WhatsApp
+                        </a>
+                    </div>
                     <p class="form-status" aria-live="polite"></p>
                 </form>
             </div>
@@ -225,6 +233,20 @@
             </div>
         </footer>
     </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5493794547731?text=Hola%20Edgar%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-fab"
+       aria-label="Escribirme por WhatsApp">
+        <i class='bx bxl-whatsapp' aria-hidden="true"></i>
+        <span class="whatsapp-fab-label">¡Hablemos!</span>
+    </a>
+
+    <!-- Botón volver arriba -->
+    <a href="#sobre-mi" class="back-to-top" id="back-to-top" aria-label="Volver al inicio">
+        <i class='bx bx-chevron-up' aria-hidden="true"></i>
+    </a>
 
     <!-- Script ligero para el efecto Spotlight que sigue al mouse en las tarjetas -->
     <script>
@@ -257,6 +279,18 @@
             });
         });
 
+        // --- Scroll Reveal con Intersection Observer ---
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
         const contactForm = document.querySelector('.contact-form');
         const formStatus = contactForm.querySelector('.form-status');
 
@@ -282,6 +316,74 @@
                 submitButton.disabled = false;
             }
         });
+
+        // --- Barra de progreso de scroll ---
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = `${(scrolled / total) * 100}%`;
+        }, { passive: true });
+
+        // --- Navbar auto-hide & Sección activa en navegación ---
+        const navbarContainer = document.querySelector('.navbar-container');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 120 && currentScrollY > lastScrollY && !navLinks.classList.contains('is-open')) {
+                navbarContainer.classList.add('nav-hidden');
+            } else {
+                navbarContainer.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navAnchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navAnchorLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // --- Botón volver arriba ---
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 350);
+        }, { passive: true });
+
+        // --- Efecto Typewriter en el hero ---
+        const typewriterEl = document.getElementById('typewriter-text');
+        const phrases = ['rápido, limpio', 'moderno, accesible', 'eficiente, robusto'];
+        let phraseIndex = 0, charIndex = 0, isDeleting = false;
+
+        function typeWriter() {
+            const current = phrases[phraseIndex];
+            typewriterEl.textContent = isDeleting
+                ? current.substring(0, charIndex - 1)
+                : current.substring(0, charIndex + 1);
+            isDeleting ? charIndex-- : charIndex++;
+
+            let delay = isDeleting ? 45 : 80;
+            if (!isDeleting && charIndex === current.length) {
+                delay = 2200; isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                delay = 400;
+            }
+            setTimeout(typeWriter, delay);
+        }
+        setTimeout(typeWriter, 1200);
     </script>
 </body>
 </html>
